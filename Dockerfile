@@ -31,15 +31,16 @@ EXPOSE 3000
 CMD ["npm", "run", "start"]
 
 # Stage 3: Development
-FROM node:24.13.0-bullseye-slim AS development
+FROM node:24-bullseye-slim AS development
 WORKDIR /app
-
 ENV NODE_ENV=development
+
+RUN apt-get update && apt-get install -y build-essential python3 && rm -rf /var/lib/apt/lists/*
 
 # Install dependencies
 COPY package.json package-lock.json ./
 RUN npm install
-
+RUN npm rebuild lightningcss
 # Copy source code
 COPY . .
 
@@ -47,4 +48,4 @@ COPY . .
 EXPOSE 3000
 
 # Start Next.js in dev mode
-CMD ["npm", "run", "dev"]
+CMD ["npx", "next", "dev"]
