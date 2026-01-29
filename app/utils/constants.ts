@@ -1,40 +1,21 @@
 import {
-  faJs,
-  faPython,
-  faReact,
-  faNodeJs,
-  faGit,
-  faDocker,
-  faGitlab,
-  faBitbucket,
-  faAws,
-  faMicrosoft,
-  faJira,
   faFacebook,
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
 import {
-  faCode,
-  faServer,
-  faCube,
-  faCubes,
-  faFeatherAlt,
-  faMugHot,
-  faPaperPlane,
-  faChartPie,
-  faNetworkWired,
-  faLeaf,
-  faSmile,
-  faBolt,
-  faChartColumn,
-  faHSquare,
-  faDatabase,
-  faProjectDiagram,
-  faCloud,
-  faComputer,
-} from "@fortawesome/free-solid-svg-icons";
+  Code,
+  Database,
+  Cloud,
+  Brain,
+  Cpu,
+  Server,
+  Zap,
+  GitBranch,
+  Box,
+  Layers,
+} from "lucide-react";
 
 export const FirstName = "Ashish";
 export const LastName = "Thapa";
@@ -42,54 +23,37 @@ export const PersonalStatement =
   "Passionate Software Engineer | Computer Engineering Graduate 🎓 | Graduate Certificate in Artificial Intelligence 🎓 | Graduate Certificate in Big Data Analytics 🎓 | Years of Experience in Crafting Scalable Solutions 💻 | Committed to Continuous Learning and Innovation 🌟 | Let's connect and explore the limitless possibilities at the intersection of code and creativity! 👨‍💻 #Web applications #Data Science #Machine Learning & AI Solutions";
 export const Designation = "Software Developer";
 
-export const ExpertiseContent = {
-  "Languages & Frameworks": [
-    { name: "JavaScript", icon: faJs },
-    { name: "TypeScript", icon: faCode },
-    { name: "Python", icon: faPython },
-    { name: "SQL", icon: faDatabase },
-    { name: "Node.js", icon: faNodeJs },
-    { name: "NestJS", icon: faFeatherAlt },
-    { name: "Express.js", icon: faServer },
-    { name: "React", icon: faReact },
-    { name: "Mocha", icon: faMugHot },
-    { name: "Chai", icon: faMugHot },
-  ],
-  Databases: [
-    { name: "MySQL", icon: faDatabase },
-    { name: "Postgres", icon: faDatabase },
-    { name: "MongoDB", icon: faLeaf }, // Not in FA, may need custom
-    { name: "Redis", icon: faServer },
-  ],
-  "Cloud Platforms": [
-    { name: "AWS", icon: faAws },
-    { name: "Azure", icon: faMicrosoft },
-    { name: "Heroku", icon: faHSquare },
-  ],
-  "DevOps & Tools": [
-    { name: "Git", icon: faGit },
-    { name: "Docker", icon: faDocker },
-    { name: "Postman", icon: faPaperPlane },
-    { name: "Swagger", icon: faCode },
-    { name: "Jira", icon: faJira },
-    { name: "Bitbucket", icon: faBitbucket },
-    { name: "GitLab", icon: faGitlab },
-    { name: "PowerBI", icon: faChartColumn },
-    { name: "Tableau", icon: faChartPie },
-  ],
-  "Data Science": [
-    { name: "Hugging Face", icon: faSmile }, // closest match
-    { name: "TensorFlow", icon: faNetworkWired },
-    { name: "Scikit-learn", icon: faComputer },
-    { name: "Spark", icon: faBolt },
-  ],
-  Core: [
-    { name: "OOP", icon: faCubes },
-    { name: "Data Structures & Algorithms", icon: faProjectDiagram },
-    { name: "Cloud Computing", icon: faCloud },
-    { name: "AI Infrastructure & Architecture", icon: faCube },
-  ],
-};
+export const skills = [
+  { name: "JavaScript", icon: Code, color: "from-yellow-400 to-amber-500" },
+  { name: "TypeScript", icon: Code, color: "from-blue-400 to-blue-600" },
+  { name: "Python", icon: Code, color: "from-green-400 to-emerald-600" },
+  { name: "SQL", icon: Database, color: "from-orange-400 to-red-500" },
+  { name: "Node.js", icon: Server, color: "from-green-500 to-green-700" },
+  { name: "NestJS", icon: Server, color: "from-red-500 to-pink-600" },
+  { name: "Express.js", icon: Server, color: "from-gray-400 to-gray-600" },
+  { name: "React", icon: Zap, color: "from-cyan-400 to-blue-500" },
+  { name: "NextJS", icon: Zap, color: "from-slate-700 to-black" },
+  { name: "Tailwind CSS", icon: Layers, color: "from-cyan-400 to-teal-500" },
+  { name: "MySQL", icon: Database, color: "from-blue-500 to-indigo-600" },
+  { name: "Postgres", icon: Database, color: "from-blue-600 to-indigo-700" },
+  { name: "MongoDB", icon: Database, color: "from-green-500 to-green-700" },
+  { name: "Redis", icon: Database, color: "from-red-500 to-rose-600" },
+  { name: "AWS", icon: Cloud, color: "from-orange-500 to-amber-600" },
+  { name: "Azure", icon: Cloud, color: "from-blue-500 to-blue-700" },
+  { name: "Docker", icon: Box, color: "from-blue-400 to-blue-600" },
+  { name: "Kubernetes", icon: Box, color: "from-blue-500 to-indigo-600" },
+  { name: "Git", icon: GitBranch, color: "from-orange-500 to-red-600" },
+  { name: "TensorFlow", icon: Brain, color: "from-orange-400 to-orange-600" },
+  { name: "PyTorch", icon: Brain, color: "from-red-500 to-orange-600" },
+  { name: "Scikit-learn", icon: Brain, color: "from-blue-500 to-cyan-600" },
+  { name: "Spark", icon: Zap, color: "from-orange-500 to-red-600" },
+  { name: "PowerBI", icon: Cpu, color: "from-yellow-500 to-amber-600" },
+  { name: "Tableau", icon: Cpu, color: "from-blue-500 to-indigo-600" },
+  { name: "Kafka", icon: Server, color: "from-gray-700 to-black" },
+  { name: "CI/CD", icon: GitBranch, color: "from-purple-500 to-pink-600" },
+  { name: "Heroku", icon: Cloud, color: "from-purple-500 to-purple-700" },
+  { name: "Hugging Face", icon: Brain, color: "from-yellow-400 to-amber-500" },
+];
 
 export const SocialLinks = [
   {
