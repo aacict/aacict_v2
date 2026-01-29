@@ -1,8 +1,5 @@
-import {
-  faFacebook,
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 import {
   Code,
@@ -57,9 +54,9 @@ export const skills = [
 
 export const SocialLinks = [
   {
-    href: "https://www.facebook.com/aacict",
-    icon: faFacebook,
-    style: { color: "#74C0FC" },
+    href: "mailto:aacict@gmail.com",
+    icon: faEnvelope,
+    style: { color: "#F87171" },
   },
   { href: "https://github.com/aacict/", icon: faGithub },
   {
