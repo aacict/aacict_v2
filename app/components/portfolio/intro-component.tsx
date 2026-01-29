@@ -1,14 +1,42 @@
+"use client"
+import { Designation, FirstName, LastName, PersonalStatement, SocialLinks } from "@/app/utils/constants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { ReactTyped } from "react-typed";
+
 export default function Intro() {
     return (
         <section id="intro" className="flex flex-col min-h-screen items-center justify-center">
-            <h1 className="text-5xl font-bold">I'm Ashish Thapa</h1>
-            <h1 className="text-5xl font-bold">I'm a Software Developer</h1>
-            <h1>
-                Passionate Software Engineer | Computer Engineering Graduate 🎓 | Graduate Certificate in Artificial Intelligence 🎓 | Graduate Certificate in Big Data Analytics 🎓 | Years of Experience in Crafting Scalable Solutions 💻 | Committed to Continuous Learning and Innovation 🌟 | Let's connect and explore the limitless possibilities at the intersection of code and creativity! 👨‍💻 #Web applications #Data Science #Machine Learning & AI Solutions
-            </h1>
-            <>
-                email, github, linkedIn
-            </>
-        </section>
+            <div className="container all-section-container m-auto px-24 z-10">
+                <div id="typed-strings">
+                    <ReactTyped
+                        className="text-5xl h-16"
+                        strings={[
+                            `I'm ${FirstName} ${LastName}`,
+                            `I'm a ${Designation}`,
+                        ]}
+                        typeSpeed={100}
+                        backSpeed={50}
+                        backDelay={1500}
+                        loop
+                    />
+                </div>
+                <div className="py-4 text-justify">
+                    {PersonalStatement}
+                </div>
+                <div className="social-icons py-4 px-2">
+                    {SocialLinks.map(({ href, icon, style }, index) => (
+                        <a
+                            key={index}
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="m-1"
+                        >
+                            <FontAwesomeIcon icon={icon} beat style={style} />
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section >
     );
 }
