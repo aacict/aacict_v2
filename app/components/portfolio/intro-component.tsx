@@ -14,7 +14,7 @@ export default function Intro() {
             <div className="container p-4 flex flex-col gap-8 text-center">
                 <div className="relative">
                     <ReactTyped
-                        className="text-xl md:text-7xl lg:text-4xl font-black h-20 md:h-28 bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+                        className="text-xl md:text-4xl lg:text-5xl font-black h-20 md:h-28 bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
                         strings={[
                             `I'm ${FirstName} ${LastName}`,
                             `I'm a ${Designation}`,
@@ -29,7 +29,7 @@ export default function Intro() {
                 </div>
 
                 <div className="text-left p-4">
-                    <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+                    <p className="text-md md:text-lg text-gray-300 leading-relaxed font-light">
                         {PersonalStatement}
                     </p>
                 </div>
