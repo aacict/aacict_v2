@@ -7,7 +7,7 @@ export default function Skills() {
     const row3 = skills.slice(20)
 
     return (
-        <section id="skills" className="flex flex-col min-h-screen items-center justify-center px-8">
+        <section id="skills" className="flex flex-col min-h-screen items-center justify-center">
             <div className="text-center mb-16 px-6">
                 <h1 className="text-6xl md:text-8xl font-black mb-4 tracking-tighter">
                     <span className="bg-linear-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
