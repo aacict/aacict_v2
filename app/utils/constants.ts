@@ -68,3 +68,41 @@ export const SocialLinks = [
     style: { color: "#74C0FC" },
   },
 ];
+
+export const personalProjects = [
+  {
+    title: "Flask Server CI/CD Pipeline",
+    description:
+      "This project demonstrates deploying a Flask API using Docker, Terraform, and GitHub Actions. The Flask app is packaged as a Docker image, pushed to GitHub Container Registry (GHCR), and deployed to AWS EC2 via Terraform.",
+    tags: ["Flask", "Docker", "Terraform", "GitHub CI/CD", "AWS EC2"],
+    github: "https://github.com/aacict/",
+    web: "",
+    color: "from-blue-500 to-cyan-500",
+    year: "2024",
+  },
+];
+
+export const clientProjects = [
+  {
+    title: "Blinqed (OrderXL)",
+    company: "PROSHORE 🚀 ready-to-code dev teams",
+    description:
+      "Comprehensive ERP solution handling inventory, sales, and customer management for 10,000+ users",
+    tags: [
+      "Node.js",
+      "Python",
+      "pug.js",
+      "Vue.js",
+      "Docker",
+      "AWS Lambda",
+      "AWS Aurora",
+      "AWS Elasticbeanstalk",
+      "AWS ElastiEc2",
+      "AWS Batch",
+      "Jira Board",
+    ],
+    web: "https://info.orderxl.com/",
+    color: "from-indigo-500 to-purple-500",
+    year: "2021-2022",
+  },
+];
