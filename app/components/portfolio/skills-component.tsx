@@ -7,7 +7,7 @@ export default function Skills() {
     const row3 = skills.slice(20)
 
     return (
-        <section id="skills" className="flex flex-col min-h-screen items-center justify-center">
+        <section id="skills" className="flex flex-col min-h-screen items-center justify-center p-6">
             <div className="text-center mb-16 px-6">
                 <h1 className="text-6xl md:text-8xl font-black mb-4 tracking-tighter">
                     <span className="bg-linear-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
@@ -17,7 +17,7 @@ export default function Skills() {
                 <p className="text-gray-400 text-lg font-light">Technologies I work with</p>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-8 rounded-3xl w-full max-w-[90em] bg-linear-to-br from-white-200 to-sky-300 py-6">
                 <div className="overflow-hidden">
                     <div className="flex gap-6 animate-scroll-right">
                         {row1.map((skill, idx) => {

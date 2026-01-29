@@ -24,8 +24,6 @@ export default function Intro() {
                         backDelay={2000}
                         loop
                     />
-                    {/* Cursor glow effect */}
-                    <div className="absolute -right-2 top-0 w-1 h-20 md:h-28 bg-linear-to-b from-blue-400 to-purple-400 opacity-70 blur-sm"></div>
                 </div>
 
                 <div className="text-left p-4">
