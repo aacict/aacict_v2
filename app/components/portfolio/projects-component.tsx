@@ -79,7 +79,7 @@ export default function Projects() {
                             </div>
 
                             <div className="overflow-hidden">
-                                <div className="flex gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                     {filteredPersonal.map((project, idx) => (
                                         <div
                                             key={`personal-${idx}`}
@@ -123,7 +123,7 @@ export default function Projects() {
                                                         <Github className="w-4 h-4" />
                                                         <span className="text-sm font-medium">Code</span>
                                                     </Link>
-                                                    <Link
+                                                    {project.web && <Link
                                                         href={project.web}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
@@ -131,7 +131,7 @@ export default function Projects() {
                                                     >
                                                         <ExternalLink className="w-4 h-4" />
                                                         <span className="text-sm font-medium">Live</span>
-                                                    </Link>
+                                                    </Link>}
                                                 </div>
                                             </div>
 
@@ -158,7 +158,7 @@ export default function Projects() {
                             </div>
 
                             <div className="overflow-hidden">
-                                <div className="flex gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                     {filteredClient.map((project, idx) => (
                                         <div
                                             key={`client-${idx}`}
@@ -205,7 +205,7 @@ export default function Projects() {
                                                     className={`w-full flex items-center justify-center gap-2 px-4 py-2 bg-linear-to-r ${project.color} text-white rounded-lg transition-all duration-300 hover:scale-105 shadow-lg`}
                                                 >
                                                     <ExternalLink className="w-4 h-4" />
-                                                    <span className="text-sm font-medium">View Live</span>
+                                                    <span className="text-sm font-medium">Client</span>
                                                 </Link>
                                             </div>
 
