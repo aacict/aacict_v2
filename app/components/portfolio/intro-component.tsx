@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { ReactTyped } from "react-typed";
 import Image from "next/image";
+import { Dancing_Script } from "next/font/google";
+const signature = Dancing_Script({ subsets: ["latin"] });
 
 const PHOTO_PATH = "/images/Ashish_Thapa.png";
 const RESUME_PATH = "/resume/Ashish_Thapa_Resume_Software_Developer.pdf";
@@ -13,13 +15,13 @@ export default function Intro() {
         <section id="intro" className="w-full relative flex flex-col min-h-screen items-center justify-center bg-linear-to-br from-gray-950 via-gray-900 to-black text-white overflow-hidden">
 
             <div className="absolute left-5 top-5 z-10">
-                <span className="font-mono tracking-widest text-blue-400 uppercase text-sm animate-slide-down">
-                    Welcome to my portfolio!
+                <span className={`${signature.className} font-serif tracking-widest text-blue-400 uppercase text-xs`}>
+                    Developed by {FirstName}
                 </span>
             </div>
 
             <div className="w-full m-auto z-10">
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-50">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-20 sm:gap:30 md:gap-40 lg:gap-50 pt-20">
 
                     {/* ── Left: Photo ── */}
                     <div className="relative shrink-0 animate-fade-in ">
@@ -68,7 +70,7 @@ export default function Intro() {
                         </div>
 
                         {/* Personal statement */}
-                        <p className="text-md md:text-lg text-gray-300 leading-relaxed font-light max-w-xl mx-auto lg:mx-0">
+                        <p className="text-md md:text-lg text-gray-300 leading-relaxed font-light max-w-xl lg:mx-0">
                             {PersonalStatement}
                         </p>
 
