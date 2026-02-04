@@ -98,7 +98,7 @@ export default function Projects() {
                                                 <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
 
                                                 {/* Description */}
-                                                <p className="text-gray-400 text-sm mb-4 line-clamp-3">{project.description}</p>
+                                                <p className="text-gray-400 text-sm mb-4">{project.description}</p>
 
                                                 {/* Tags */}
                                                 <div className="flex flex-wrap gap-2 mb-6">
@@ -183,7 +183,7 @@ export default function Projects() {
                                                 <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
 
                                                 {/* Description */}
-                                                <p className="text-gray-400 text-sm mb-4 line-clamp-3">{project.description}</p>
+                                                <p className="text-gray-400 text-sm mb-4">{project.description}</p>
 
                                                 {/* Tags */}
                                                 <div className="flex flex-wrap gap-2 mb-6">

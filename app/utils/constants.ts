@@ -67,6 +67,53 @@ export const SocialLinks = [
 ];
 
 export const personalProjects = [
+  // {
+  //   title: "AI powered Job Application Tracker",
+  //   description:
+  //     "AI-powered assistant trained on my professional resume and portfolio. Built with LLM technology to answer questions about my experience, skills, projects, and career background in real-time through natural conversation.",
+  //   tags: [],
+  //   github: "",
+  //   web: "h",
+  //   color: "from-blue-500 to-cyan-500",
+  //   year: "concept draft",
+  // },
+  {
+    title: "Ask Ashish",
+    description:
+      "AI-powered assistant trained on my professional resume and portfolio. Built with LLM technology to answer questions about my experience, skills, projects, and career background in real-time through natural conversation.",
+    tags: [],
+    github: "https://github.com/aacict/ask-ashish",
+    web: "https://thapaashish.com.np/ask-ashish",
+    color: "from-blue-500 to-cyan-500",
+    year: "2026 - ongoing",
+  },
+  {
+    title: "AI Content Creator",
+    description:
+      "Automated social media content generator that creates and posts AI-generated images with captions to Facebook using AWS Lambda, Hugging Face APIs, and Terraform. Serverless architecture with scheduled daily posts via EventBridge.",
+    tags: [
+      "AWS Lambda",
+      "Hugging Face",
+      "Terraform",
+      "Python",
+      "Facebook API",
+      "Serverless",
+    ],
+    github: "https://github.com/aacict/ai-content-creator",
+    web: "https://www.facebook.com/aicontentcreatorbot",
+    color: "from-blue-500 to-cyan-500",
+    year: "2026",
+  },
+  {
+    title: "Personal Portfolio v2",
+    description:
+      "My personal portfolio website built with Next.js, TypeScript, Tailwind CSS and hosted on Vercel.",
+    tags: ["Next.js", "Git", "TypeScript", "Tailwind CSS", "Vercel"],
+    github: "https://github.com/aacict/aacict_v2",
+    web: "https://thapaashish.com.np/",
+    color: "from-blue-500 to-cyan-500",
+    year: "2026",
+  },
   {
     title: "Flask Server CI/CD Pipeline",
     description:
@@ -76,6 +123,21 @@ export const personalProjects = [
     web: "",
     color: "from-blue-500 to-cyan-500",
     year: "2025",
+  },
+  {
+    title: "Crime Statistics",
+    description:
+      "Analyzes crime statistics in Canada to identify trends, patterns, and insights across different provinces and territories over time. It includes data cleaning, exploratory data analysis, and visualization.",
+    tags: [
+      "Python",
+      "PowerBI",
+      "Exploratory Data Analysis",
+      "Data Visualization",
+    ],
+    github: "https://github.com/swekriti12/Crime-Statistics",
+    web: "",
+    color: "from-blue-500 to-cyan-500",
+    year: "2024-2025",
   },
   {
     title: "AI & ML Projects",
@@ -97,31 +159,6 @@ export const personalProjects = [
     year: "2023-2024",
   },
   {
-    title: "Crime Statistics",
-    description:
-      "Analyzes crime statistics in Canada to identify trends, patterns, and insights across different provinces and territories over time. It includes data cleaning, exploratory data analysis, and visualization.",
-    tags: [
-      "Python",
-      "PowerBI",
-      "Exploratory Data Analysis",
-      "Data Visualization",
-    ],
-    github: "https://github.com/swekriti12/Crime-Statistics",
-    web: "",
-    color: "from-blue-500 to-cyan-500",
-    year: "2024-2025",
-  },
-  {
-    title: "Personal Portfolio v2",
-    description:
-      "My personal portfolio website built with Next.js, TypeScript, Tailwind CSS and hosted on Vercel.",
-    tags: ["Next.js", "Git", "TypeScript", "Tailwind CSS", "Vercel"],
-    github: "https://github.com/aacict/aacict_v2",
-    web: "https://thapaashish.com.np/",
-    color: "from-blue-500 to-cyan-500",
-    year: "Updated 2026",
-  },
-  {
     title: "Personal Portfolio v1",
     description:
       "My personal portfolio website built with React,React Query, TypeScript, Tailwind CSS.",
@@ -135,7 +172,7 @@ export const personalProjects = [
 
 export const clientProjects = [
   {
-    title: "Al Ghwali",
+    title: "Al Ghawali",
     company: "Al Ghawali Manpower Supply",
     description:
       "Architected and developed scalable web applications, including multi-company websites and internal workflow systems. All-in-one admin panel to manage visa processes, worker tracking, and internal accounting workflows, reducing manual processing time.",
@@ -197,6 +234,16 @@ export const clientProjects = [
     web: "https://info.orderxl.com/",
     color: "from-indigo-500 to-purple-500",
     year: "2021-2022",
+  },
+  {
+    title: "Orange Games",
+    company: "Freelance (Anka Ek Technology)",
+    description:
+      "Built scalable backend services for a multiplayer gaming platform featuring traditional and modern games (Ludo, Carrom, Apple & Oranges, Baagchal). Designed RESTful APIs for gameplay mechanics, user management, leaderboards, and real-time game state synchronization.",
+    tags: ["Express.js", "Rest API", "MongoDB", "AWS", "Jira Board"],
+    web: "https://ankaek.com/our-games",
+    color: "from-indigo-500 to-purple-500",
+    year: "2020-2022",
   },
   {
     title: "Workerpros",
