@@ -1,11 +1,7 @@
 "use client"
 import { skills } from "@/app/utils/constants";
-export default function Skills() {
-    // Create 3 rows with different speeds
-    const row1 = skills.slice(0, 10)
-    const row2 = skills.slice(10, 20)
-    const row3 = skills.slice(20)
 
+export default function Skills() {
     return (
         <section id="skills" className="flex flex-col min-h-screen items-center justify-center p-6">
             <div className="text-center mb-16 px-6">
@@ -17,84 +13,41 @@ export default function Skills() {
                 <p className="text-gray-400 text-lg font-light">Technologies I work with</p>
             </div>
 
-            <div className="space-y-8 rounded-3xl w-88 sm:w-160 lg:w-full max-w-[90em] bg-linear-to-br from-white-200 to-sky-300 py-6">
-                <div className="overflow-hidden">
-                    <div className="flex gap-6 animate-scroll-right">
-                        {row1.map((skill, idx) => {
-                            const Icon = skill.icon;
-                            return (
-                                <div
-                                    key={`r1-${idx}`}
-                                    className="group relative shrink-0"
-                                >
-                                    <div className="flex items-center gap-4 bg-linear-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl px-6 py-4 hover:border-gray-600 transition-all duration-300 hover:scale-110">
-                                        <div className={`p-3 rounded-xl bg-linear-to-br ${skill.color}`}>
-                                            <Icon className="w-6 h-6 text-white" />
-                                        </div>
-                                        <span className="text-white font-semibold text-lg whitespace-nowrap">
-                                            {skill.name}
-                                        </span>
-                                    </div>
-                                    {/* Glow effect */}
-                                    <div className={`absolute inset-0 rounded-2xl bg-linear-to-br ${skill.color} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 -z-10`}></div>
+            <div className="flex flex-wrap justify-center gap-4 max-w-6xl">
+                {skills.map((skill, idx) => {
+                    const Icon = skill.icon;
+                    return (
+                        <div
+                            key={idx}
+                            className="group relative animate-fade-in-up"
+                            style={{ animationDelay: `${idx * 90}ms` }}
+                        >
+                            <div className={`
+                                flex items-center gap-3 px-6 py-3
+                                bg-linear-to-r from-gray-800/60 to-gray-900/60
+                                backdrop-blur-md border border-gray-700/50
+                                rounded-full
+                                transition-all duration-300
+                                hover:scale-110 hover:border-gray-500
+                                hover:shadow-lg
+                            `}>
+                                <div className={`p-2 rounded-full bg-linear-to-br ${skill.color}`}>
+                                    <Icon className="w-5 h-5 text-white" />
                                 </div>
-                            );
-                        })}
-                    </div>
-                </div>
+                                <span className="text-white font-medium">
+                                    {skill.name}
+                                </span>
+                            </div>
 
-                {/* Row 2 - Scroll left */}
-                <div className="overflow-hidden">
-                    <div className="flex gap-6 animate-scroll-left">
-                        {row2.map((skill, idx) => {
-                            const Icon = skill.icon;
-                            return (
-                                <div
-                                    key={`r2-${idx}`}
-                                    className="group relative shrink-0"
-                                >
-                                    <div className="flex items-center gap-4 bg-linear-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl px-6 py-4 hover:border-gray-600 transition-all duration-300 hover:scale-110">
-                                        <div className={`p-3 rounded-xl bg-linear-to-br ${skill.color}`}>
-                                            <Icon className="w-6 h-6 text-white" />
-                                        </div>
-                                        <span className="text-white font-semibold text-lg whitespace-nowrap">
-                                            {skill.name}
-                                        </span>
-                                    </div>
-                                    {/* Glow effect */}
-                                    <div className={`absolute inset-0 rounded-2xl bg-linear-to-br ${skill.color} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 -z-10`}></div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-
-                {/* Row 3 - Scroll right (faster) */}
-                <div className="overflow-hidden">
-                    <div className="flex gap-6 animate-scroll-right-fast">
-                        {row3.map((skill, idx) => {
-                            const Icon = skill.icon;
-                            return (
-                                <div
-                                    key={`r3-${idx}`}
-                                    className="group relative shrink-0"
-                                >
-                                    <div className="flex items-center gap-4 bg-linear-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl px-6 py-4 hover:border-gray-600 transition-all duration-300 hover:scale-110">
-                                        <div className={`p-3 rounded-xl bg-linear-to-br ${skill.color}`}>
-                                            <Icon className="w-6 h-6 text-white" />
-                                        </div>
-                                        <span className="text-white font-semibold text-lg whitespace-nowrap">
-                                            {skill.name}
-                                        </span>
-                                    </div>
-                                    {/* Glow effect */}
-                                    <div className={`absolute inset-0 rounded-2xl bg-linear-to-br ${skill.color} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 -z-10`}></div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
+                            {/* Subtle glow */}
+                            <div className={`
+                                absolute inset-0 rounded-full bg-linear-to-br ${skill.color}
+                                opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 -z-10
+                            `}></div>
+                        </div>
+                    );
+                })}
             </div>
-        </section >
+        </section>
     );
-};
+}

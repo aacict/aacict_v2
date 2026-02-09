@@ -1,35 +1,56 @@
 @keyframes scroll-right {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
-        .animate-scroll-right {
-          animation: scroll-right 40s linear infinite;
-        }
+.animate-scroll-right {
+  animation: scroll-right 40s linear infinite;
+}
 
-        .animate-scroll-left {
-          animation: scroll-left 35s linear infinite;
-        }
+.animate-scroll-left {
+  animation: scroll-left 35s linear infinite;
+}
 
-        .animate-scroll-right-fast {
-          animation: scroll-right 25s linear infinite;
-        }
+.animate-scroll-right-fast {
+  animation: scroll-right 25s linear infinite;
+}
 
-        .animate-scroll-right:hover,
-        .animate-scroll-left:hover,
-        .animate-scroll-right-fast:hover {
-          animation-play-state: paused;
-        }
+.animate-scroll-right:hover,
+.animate-scroll-left:hover,
+.animate-scroll-right-fast:hover {
+  animation-play-state: paused;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 8s ease-in-out forwards;
+  opacity: 0;
+  /* animation-fill-mode: forwards; */
+}
+
+.animate-fade-in-up:hover {
+  animation-play-state: paused;
+}

@@ -59,7 +59,7 @@ export default function Intro() {
                             <ReactTyped
                                 className="text-xl md:text-4xl lg:text-5xl font-black bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
                                 strings={[
-                                    `I'm ${FirstName} ${LastName}`,
+                                    `Hi, I'm ${FirstName} ${LastName}`,
                                     `I'm a ${Designation}`,
                                 ]}
                                 typeSpeed={80}
