@@ -285,3 +285,10 @@ export const clientProjects = [
     year: "2019-2020",
   },
 ];
+
+export const suggestedQuestions = [
+  "What's your experience with React and Node.js?",
+  "Tell me about your AI/ML projects",
+  "What cloud platforms do you work with?",
+  "What's your approach to full-stack development?",
+];
