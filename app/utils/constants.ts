@@ -119,7 +119,7 @@ export const personalProjects = [
     description:
       "This project demonstrates deploying a Flask API using Docker, Terraform, and GitHub Actions. The Flask app is packaged as a Docker image, pushed to GitHub Container Registry (GHCR), and deployed to AWS EC2 via Terraform.",
     tags: ["Flask", "Docker", "Terraform", "GitHub CI/CD", "AWS EC2"],
-    github: "https://github.com/aacict/",
+    github: "https://github.com/aacict/Flask-Server-CI-CD-Pipeline",
     web: "",
     color: "from-blue-500 to-cyan-500",
     year: "2025",
