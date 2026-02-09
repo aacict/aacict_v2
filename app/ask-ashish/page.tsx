@@ -39,9 +39,57 @@ export default function AskAshish() {
         }
     }, [input]);
 
+    const handleSend = async () => {
+        if (!input.trim() || isLoading) return;
 
+        const userMessage: Message = {
+            id: Date.now().toString(),
+            role: 'user',
+            content: input.trim(),
+            timestamp: new Date(),
+        };
 
+        setMessages((prev) => [...prev, userMessage]);
+        setInput('');
+        setIsLoading(true);
 
+        try {
+            const response = await fetch('/api/ask-ashish', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: input.trim() }),
+            });
+
+            const data = await response.json();
+
+            const assistantMessage: Message = {
+                id: (Date.now() + 1).toString(),
+                role: 'assistant',
+                content: data.response || 'Sorry, I encountered an error. Please try again.',
+                timestamp: new Date(),
+            };
+
+            setMessages((prev) => [...prev, assistantMessage]);
+        } catch (error) {
+            console.error('Error:', error);
+            const errorMessage: Message = {
+                id: (Date.now() + 1).toString(),
+                role: 'assistant',
+                content: 'Sorry, something went wrong. Please try again later.',
+                timestamp: new Date(),
+            };
+            setMessages((prev) => [...prev, errorMessage]);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleSend();
+        }
+    };
 
     return (
         <div className="min-h-screen bg-linear-to-br from-gray-950 via-gray-900 to-black text-white">
@@ -174,6 +222,7 @@ export default function AskAshish() {
                                     ref={inputRef}
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
+                                    onKeyDown={handleKeyDown}
                                     placeholder={`Ask ${FirstName} anything...`}
                                     rows={1}
                                     className="w-full px-5 py-3 pr-12 bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-gray-600 resize-none max-h-32 transition-all duration-300"
@@ -186,6 +235,7 @@ export default function AskAshish() {
 
                             {/* Send button */}
                             <button
+                                onClick={handleSend}
                                 disabled={!input.trim() || isLoading}
                                 className="p-3 bg-linear-to-r from-blue-500 to-purple-500 rounded-xl hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                             >
