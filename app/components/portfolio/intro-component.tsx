@@ -26,7 +26,7 @@ export default function Intro() {
                     {/* ── Left: Photo ── */}
                     <div className="relative shrink-0 animate-fade-in ">
                         {/* Rotating border ring */}
-                        <div className="absolute inset-0 rounded-full bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 animate-spin-slow p-[3px]">
+                        <div className="absolute inset-0 rounded-full bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 animate-spin-slow p-0.75">
                             <div className="h-full w-full rounded-full bg-gray-950"></div>
                         </div>
 

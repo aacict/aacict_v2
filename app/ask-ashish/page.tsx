@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Send, Sparkles, User, Bot, Loader2 } from 'lucide-react';
 import { FirstName, suggestedQuestions } from '@/app/utils/constants';
 import Link from 'next/link';
+import { useChat } from '../lib/hooks/queries/useAskAshish';
 
 interface Message {
     id: string;
@@ -22,9 +23,10 @@ export default function AskAshish() {
         },
     ]);
     const [input, setInput] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLTextAreaElement>(null);
+    const { mutateAsync, isPending } = useChat();
+    const [conversationId, setConversationId] = useState<string | undefined>(undefined);
 
     // Scroll to bottom when messages change
     useEffect(() => {
@@ -40,7 +42,7 @@ export default function AskAshish() {
     }, [input]);
 
     const handleSend = async () => {
-        if (!input.trim() || isLoading) return;
+        if (!input.trim() || isPending) return;
 
         const userMessage: Message = {
             id: Date.now().toString(),
@@ -51,27 +53,30 @@ export default function AskAshish() {
 
         setMessages((prev) => [...prev, userMessage]);
         setInput('');
-        setIsLoading(true);
 
         try {
-            const response = await fetch('/api/ask-ashish', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: input.trim() }),
+            const response = await mutateAsync({
+                question: userMessage.content,
+                conversation_id: conversationId,
+                stream: false,
             });
 
-            const data = await response.json();
+            // Update conversation ID for next message
+            setConversationId(response.conversation_id);
 
             const assistantMessage: Message = {
-                id: (Date.now() + 1).toString(),
+                id: response.message_id,
                 role: 'assistant',
-                content: data.response || 'Sorry, I encountered an error. Please try again.',
-                timestamp: new Date(),
+                content: response.answer,
+                timestamp: new Date(response.timestamp),
             };
 
             setMessages((prev) => [...prev, assistantMessage]);
+
+            // Optionally handle sources (show in UI, console, etc.)
+            console.log('Sources used:', response.sources);
+
         } catch (error) {
-            console.error('Error:', error);
             const errorMessage: Message = {
                 id: (Date.now() + 1).toString(),
                 role: 'assistant',
@@ -79,8 +84,6 @@ export default function AskAshish() {
                 timestamp: new Date(),
             };
             setMessages((prev) => [...prev, errorMessage]);
-        } finally {
-            setIsLoading(false);
         }
     };
 
@@ -177,7 +180,7 @@ export default function AskAshish() {
                     ))}
 
                     {/* Loading indicator */}
-                    {isLoading && (
+                    {isPending && (
                         <div className="flex gap-4 animate-slide-up">
                             <div className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-linear-to-br from-blue-500 to-purple-500">
                                 <Bot className="w-5 h-5 text-white" />
@@ -226,7 +229,7 @@ export default function AskAshish() {
                                     placeholder={`Ask ${FirstName} anything...`}
                                     rows={1}
                                     className="w-full px-5 py-3 pr-12 bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-gray-600 resize-none max-h-32 transition-all duration-300"
-                                    disabled={isLoading}
+                                    disabled={isPending}
                                 />
                                 <div className="absolute right-3 bottom-3 text-xs text-gray-600">
                                     {input.length > 0 && `${input.length}`}
@@ -236,10 +239,10 @@ export default function AskAshish() {
                             {/* Send button */}
                             <button
                                 onClick={handleSend}
-                                disabled={!input.trim() || isLoading}
+                                disabled={!input.trim() || isPending}
                                 className="p-3 bg-linear-to-r from-blue-500 to-purple-500 rounded-xl hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                             >
-                                {isLoading ? (
+                                {isPending ? (
                                     <Loader2 className="w-5 h-5 text-white animate-spin" />
                                 ) : (
                                     <Send className="w-5 h-5 text-white" />
